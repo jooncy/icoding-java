@@ -31,7 +31,7 @@ pipeline {
           //sh 'docker stack deploy -c docker-compose.yaml icodingapp'
           //邮件通知
           mail to: '1547153449@qq.com',
-                       subject: "项目 ${env.JOB_NAME}-${env.BUILD_NUMBER} 触发构建",
+             subject: "项目 ${env.JOB_NAME}-${env.BUILD_NUMBER} 触发构建 ${BUILD_STATUS}",
                        body: "请点击 ==> URL ${env.BUILD_URL} 验证构建结果"
        }
      }
