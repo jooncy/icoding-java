@@ -26,9 +26,9 @@ pipeline {
      stage('docker swarm进行部署') {
        agent any
        steps {
-          //人工确认
-          input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'liujunxi'
-          sh 'docker stack deploy -c docker-compose.yaml icodingapp'
+          //人工确认，当前镜像部署有问题，所以注释掉了
+          //input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'liujunxi'
+          //sh 'docker stack deploy -c docker-compose.yaml icodingapp'
           //邮件通知
           mail to: '1547153449@qq.com',
                        subject: "${env.JOB_NAME}-${env.BUILD_NUMBER}构建成功",
