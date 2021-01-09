@@ -33,7 +33,7 @@ pipeline {
           //input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'admin'
           //sh 'docker stack deploy -c docker-compose.yaml icodingapp'
           //邮件通知
-          mail to: '1970721562@qq.com',
+          mail to: '1547153449@qq.com',
                        subject: "${env.JOB_NAME}-${env.BUILD_NUMBER}构建成功",
                        body: "项目 ${env.BRANCH_NAME}分支 构建成功 ${env.BUILD_URL}，"
        }
