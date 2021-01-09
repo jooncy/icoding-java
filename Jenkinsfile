@@ -11,9 +11,6 @@ pipeline {
         }
        steps {
           sh label: '', script: 'mvn -gs setting.xml clean package -Dmaven.test.skip=true'
-          sh 'pwd'
-          sh 'ls'
-          sh 'echo 666'
        }
      }
 
@@ -30,8 +27,8 @@ pipeline {
        agent any
        steps {
           //人工确认
-          //input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'admin'
-          //sh 'docker stack deploy -c docker-compose.yaml icodingapp'
+          input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'admin'
+          sh 'docker stack deploy -c docker-compose.yaml icodingapp'
           //邮件通知
           mail to: '1547153449@qq.com',
                        subject: "${env.JOB_NAME}-${env.BUILD_NUMBER}构建成功",
