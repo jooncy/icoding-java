@@ -43,8 +43,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'aliyundocker', passwordVariable: 'apwd', usernameVariable: 'user')]) {
                     // some block
                      sh 'docker login -u $user -p $apwd registry.cn-hangzhou.aliyuncs.com'
-                     sh 'docker tag icoding-java-img registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker/icoding-java-img:v1.0'
-                     sh 'docker push registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker/icoding-java-img:v1.0'
+                     sh 'docker tag icoding-java-img registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker:icoding-java-img:v1.0'
+                     sh 'docker push registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker:icoding-java-img:v1.0'
                      //sh 'docker tag icoding-java-img registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker/icoding-java-img:v1.0'
                      //sh 'docker push registry.cn-hangzhou.aliyuncs.com/milianops/icodingdocker/icoding-java-img:v1.0'
                    
