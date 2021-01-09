@@ -27,7 +27,7 @@ pipeline {
        agent any
        steps {
           //人工确认
-          input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'admin'
+          input id: 'Deployee-to-prod', message: '确定部署到生产环境？', ok: '部署', submitter: 'liujunxi'
           sh 'docker stack deploy -c docker-compose.yaml icodingapp'
           //邮件通知
           mail to: '1547153449@qq.com',
